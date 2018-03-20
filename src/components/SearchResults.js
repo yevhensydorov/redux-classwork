@@ -1,5 +1,6 @@
 import React from 'react';
 import SearchResult from './SearchResult';
+import PropTypes from 'prop-types';
 
 class SearchResults extends React.Component {
   render(){
@@ -8,7 +9,7 @@ class SearchResults extends React.Component {
         <ul className="results-list">
           {this.props.results.map( result => {
             return <SearchResult
-              playVideo={this.props.playVideo}
+              receiveId={this.props.receiveId}
               result={result}
               key={result.id.videoId}
             />;
@@ -18,5 +19,10 @@ class SearchResults extends React.Component {
     );
   }
 }
+
+SearchResults.propTypes = {
+  results: PropTypes.array,
+  receiveId: PropTypes.func.isRequired
+};
 
 export default SearchResults;

@@ -26,6 +26,7 @@ class Player extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
+    console.log(this.props);
     const { videoId } = nextProps;
     if(videoId !== this.props.videoId){
       this.player.loadVideoById( videoId );
@@ -43,6 +44,12 @@ class Player extends React.Component {
       </div>
     );
   }
+};
+
+Player.propTypes = {
+  videoId : PropTypes.shape({
+    videoId : PropTypes.string
+  })
 };
 
 export default Player;

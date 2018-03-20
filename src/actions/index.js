@@ -24,3 +24,10 @@ export const searchRequest = query => {
     return dispatch(fetchSearch(query));
   };
 };
+
+export const receiveId = videoId => {
+  return {
+    type: 'RECEIVE_ID',
+    videoId: videoId
+  };
+};
