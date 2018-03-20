@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import SearchResults from '../components/SearchResults';
-import {receiveId} from '../actions';
+import {receiveId, addToPlaylist} from '../actions';
 
 const getResults = (state) => {
   return state.search[state.query] || [];
@@ -11,7 +11,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	receiveId: videoId => dispatch(receiveId(videoId))
+	receiveId: videoId => dispatch(receiveId(videoId)),
+	addToPlaylist: videoId => dispatch(addToPlaylist(videoId))
 });
 
 export default connect(

@@ -31,3 +31,11 @@ export const receiveId = videoId => {
     videoId: videoId
   };
 };
+
+export const addToPlaylist = ({videoId, playlist}) => {
+  return {
+    type:'SAVE_TO_PLAYLIST',
+    videoId: videoId,
+    playlist
+  };
+};

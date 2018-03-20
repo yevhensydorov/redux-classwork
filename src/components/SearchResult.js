@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchResult = ({result, receiveId}) => {
+const SearchResult = ({result, receiveId, addToPlaylist}) => {
+
   const { snippet } = result;
   const { videoId } = result.id;
   const { description, title } = snippet;
@@ -25,6 +26,9 @@ const SearchResult = ({result, receiveId}) => {
         </div>
         {description}
       </div>
+      <button onClick={event => {
+        addToPlaylist(videoId);
+      }}>Add</button>
     </li>
   );
 };
@@ -47,7 +51,8 @@ SearchResult.propTypes = {
       }),  
     }),
   }),
-  receiveId : PropTypes.func.isRequired
+  receiveId : PropTypes.func.isRequired,
+  addToPlaylist: PropTypes.func
 };
 
 export default SearchResult;
