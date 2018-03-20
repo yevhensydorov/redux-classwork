@@ -1,9 +1,7 @@
 const videoId = (state = '', action) => {
 	switch (action.type) {
 		case 'RECEIVE_ID':
-			return Object.assign({}, state, {
-				videoId: action.videoId
-			});
+			return action.videoId;
 		default:
 			return state;
 	}
