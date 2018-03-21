@@ -32,12 +32,12 @@ const SearchResult = ({result, receiveId, addToPlaylist}) => {
       </div>
       <div>
         <button onClick={event => {
-          addToPlaylist(videoId);
+          console.log('from search result', videoId);
+          console.log(addToPlaylist);
+          addToPlaylist({videoId});
         }}>Add</button>
       </div>
     </li>
-
-
   );
 };
 

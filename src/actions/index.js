@@ -32,10 +32,10 @@ export const receiveId = videoId => {
   };
 };
 
-export const addToPlaylist = ({videoId, playlist}) => {
+export const addToPlaylist = ({videoId}) => {
+  console.log(videoId);
   return {
     type:'SAVE_TO_PLAYLIST',
-    videoId: videoId,
-    playlist
+    videoId: videoId
   };
 };
