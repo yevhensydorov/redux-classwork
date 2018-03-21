@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SearchResult = ({result, receiveId, addToPlaylist}) => {
+const SearchResult = ({result, receiveId, addToPlaylist, addToHistory}) => {
 
   const { snippet } = result;
   const { videoId } = result.id;
@@ -15,6 +15,7 @@ const SearchResult = ({result, receiveId, addToPlaylist}) => {
         className="result-item"
         onClick={ event => {
           receiveId(videoId);
+          addToHistory(result);
       }}>
       <img
         className="result-img"
@@ -58,7 +59,8 @@ SearchResult.propTypes = {
     }),
   }),
   receiveId : PropTypes.func.isRequired,
-  addToPlaylist: PropTypes.func
+  addToPlaylist: PropTypes.func,
+  addToHistory: PropTypes.func
 };
 
 export default SearchResult;

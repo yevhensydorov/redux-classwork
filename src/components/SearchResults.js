@@ -2,7 +2,7 @@ import React from 'react';
 import SearchResult from './SearchResult';
 import PropTypes from 'prop-types';
 
-const SearchResults = ({results, receiveId, addToPlaylist}) => {
+const SearchResults = ({results, receiveId, addToPlaylist, addToHistory}) => {
   return (
     <div>
       <h1>Results</h1>
@@ -13,6 +13,7 @@ const SearchResults = ({results, receiveId, addToPlaylist}) => {
             result={result}
             key={result.id.videoId}
             addToPlaylist={addToPlaylist}
+            addToHistory={addToHistory}
           />;
         })}
       </ul>
@@ -23,7 +24,8 @@ const SearchResults = ({results, receiveId, addToPlaylist}) => {
 SearchResults.propTypes = {
   results: PropTypes.array,
   receiveId: PropTypes.func.isRequired,
-  addToPlaylist: PropTypes.func
+  addToPlaylist: PropTypes.func,
+  addToHistory: PropTypes.func
 };
 
 export default SearchResults;

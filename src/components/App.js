@@ -2,8 +2,9 @@ import React from 'react';
 import Player from './Player';
 import Search from './Search';
 import PlayerContainer from '../containers/PlayerContainer';
-import {receiveId} from '../actions';
+// import {receiveId} from '../actions';
 import PlaylistContainer from '../containers/PlaylistContainer';
+import HistoryContainer from '../containers/HistoryContainer';
 
 const App = () => {
   return (
@@ -16,6 +17,9 @@ const App = () => {
       </div>
       <div  className="col-6 offset-3 d-flex justify-content-center">
         <PlaylistContainer />
+      </div>
+      <div  className="col-6 offset-3 d-flex justify-content-center">
+        <HistoryContainer />
       </div>
     </div>
   );

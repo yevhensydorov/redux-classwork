@@ -38,3 +38,10 @@ export const addToPlaylist = result => {
     result: result
   };
 };
+
+export const addToHistory = result => {
+  return {
+    type: 'SAVE_TO_HISTORY',
+    result: result
+  };
+};
