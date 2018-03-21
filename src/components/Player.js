@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import PlaylistContainer from '../containers/PlaylistContainer';
-
 
 class Player extends React.Component {
   constructor(props){
@@ -43,11 +41,7 @@ class Player extends React.Component {
     return (
       <div>
         <div id="player"></div>
-          <div>
-            <PlaylistContainer />
-          </div>
       </div>
-
     );
   }
 };

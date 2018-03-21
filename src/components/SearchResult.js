@@ -8,12 +8,14 @@ const SearchResult = ({result, receiveId, addToPlaylist}) => {
   const { description, title } = snippet;
   const { height, width, url } = result.snippet.thumbnails.default;
   return (
-    <li
-      className="result-item"
-      onClick={ event => {
-        receiveId(videoId);
-      }}
-    >
+    
+  
+    <li>
+      <div       
+        className="result-item"
+        onClick={ event => {
+          receiveId(videoId);
+      }}>
       <img
         className="result-img"
         src={url}
@@ -26,10 +28,16 @@ const SearchResult = ({result, receiveId, addToPlaylist}) => {
         </div>
         {description}
       </div>
-      <button onClick={event => {
-        addToPlaylist(videoId);
-      }}>Add</button>
+
+      </div>
+      <div>
+        <button onClick={event => {
+          addToPlaylist(videoId);
+        }}>Add</button>
+      </div>
     </li>
+
+
   );
 };
 

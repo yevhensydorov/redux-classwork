@@ -1,6 +1,6 @@
 export const updateQuery = query => {
   console.log(query);
-  return {type: 'UPDATE_QUERY', query};
+  return {type: 'UPDATE_QUERY', query: query};
 };
 
 function receiveSearch(results, query) {

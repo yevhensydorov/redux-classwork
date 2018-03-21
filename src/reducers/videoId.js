@@ -1,4 +1,4 @@
-const videoId = (state = '', action) => {
+const videoId = (state = 'xsSnOQynTHs', action) => {
 	switch (action.type) {
 		case 'RECEIVE_ID':
 			return action.videoId;
