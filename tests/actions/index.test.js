@@ -60,6 +60,30 @@ describe('actions', () => {
 	})
 })
 
-// describe('fetch data', () => {
-	
-// })
+describe('fetch data', () => {
+	const asAPIDummyData = searchQueryDummyData.default;
+	beforeEach(() => {
+		fetchMock.get('*', {
+			items : ['a', 'b']
+		});
+	});
+
+	it('fetch a list of videos', done => {
+		const requestFunction = actions.fetchSearch('hello');
+		const dispatch = jest.fn();
+		requestFunction(dispatch);
+
+		setTimeout(() => {
+			expect(dispatch.mock.calls).toEqual([[{
+    		type:'RECEIVE_SEARCH',
+    		results: ['a', 'b'],
+    		query: 'hello'
+  		}]]);
+  		done();
+		}, 0);
+	})
+
+	afterEach(() => {
+		fetchMock.restore();
+	})
+})
