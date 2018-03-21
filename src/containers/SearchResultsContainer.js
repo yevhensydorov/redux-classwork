@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
 	receiveId: videoId => dispatch(receiveId(videoId)),
-	addToPlaylist: videoId => dispatch(addToPlaylist(videoId))
+	addToPlaylist: result => dispatch(addToPlaylist(result))
 });
 
 export default connect(

@@ -1,20 +1,22 @@
 import {connect} from 'react-redux';
 import Playlist from '../components/Playlist';
-import {addToPlaylist} from '../actions';
+import {receiveId, addToPlaylist} from '../actions';
 
 const getPlaylist = (state) => {
-	console.log(state);
-	console.log(state.playlist);
 	return state.playlist || [];
 };
 
+const mapDispatchToProps = dispatch => ({
+	receiveId: videoId => dispatch(receiveId(videoId))
+});
+
 const mapStateToProps = state => {
-	console.log(state);
 	return ({
 		playlist: getPlaylist(state)
 	});
 };
 
 export default connect(
-	mapStateToProps
+	mapStateToProps,
+	mapDispatchToProps
 	)(Playlist);

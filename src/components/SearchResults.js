@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 const SearchResults = ({results, receiveId, addToPlaylist}) => {
   return (
     <div>
+      <h1>Results</h1>
       <ul className="results-list">
         {results.map( result => {
           return <SearchResult

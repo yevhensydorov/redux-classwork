@@ -11,11 +11,11 @@ const App = () => {
       <div className="col-12 d-flex justify-content-center">
         <PlayerContainer />
       </div>
-      <div>
-        <PlaylistContainer />
-      </div>
       <div className="col-6 offset-3 d-flex justify-content-center">
         <Search />
+      </div>
+      <div  className="col-6 offset-3 d-flex justify-content-center">
+        <PlaylistContainer />
       </div>
     </div>
   );
