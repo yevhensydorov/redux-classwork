@@ -2,7 +2,6 @@ import React from 'react';
 import Player from './Player';
 import Search from './Search';
 import PlayerContainer from '../containers/PlayerContainer';
-// import {receiveId} from '../actions';
 import PlaylistContainer from '../containers/PlaylistContainer';
 import HistoryContainer from '../containers/HistoryContainer';
 

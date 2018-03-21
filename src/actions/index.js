@@ -3,7 +3,7 @@ export const updateQuery = query => {
   return {type: 'UPDATE_QUERY', query: query};
 };
 
-function receiveSearch(results, query) {
+export function receiveSearch(results, query) {
   return {
     type:'RECEIVE_SEARCH',
     results: results.items,
